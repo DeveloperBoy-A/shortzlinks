@@ -1,0 +1,18 @@
+name: shortzlinks
+services:
+  - name: web
+    type: web
+    ports:
+      - port: 3000
+        protocol: http
+    env:
+      - key: NODE_ENV
+        value: production
+    routes:
+      - path: /
+    instance_types:
+      - nano
+    build:
+      type: buildpack
+    run:
+      command: pnpm start
